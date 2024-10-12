@@ -13,16 +13,24 @@ import overouticm from "../assets/images/over-out-icm.jpeg";
 import pierre from "../assets/images/pierre.jpeg";
 import tyndfilm from "../assets/images/tynd-film.jpg";
 import "../styles/tobii.min.css";
+// Henter parametrene fra Astro.props
+const { href="#", target="_self"} = Astro.props; 
 ---
+
 <MainLayout title="Titel">
 	<article class="p-4 md:p-0">
 		<section class="max-w-xl mx-auto mt-32 prose" id="titel">
 			<h2 class="text-6xl md:text-9xl text-center">Uperfekt er perfekt</h2>
 		</section>
-		<section class="max-w-4xl mx-auto mt-32" id="herovideo">
-			<video width="1280" height="960" autoplay muted loop>
+<a href="facebook.com">FACEBOOK</a>
+		<section id="videoonhover" x-data class="max-w-4xl mx-auto mt-32">
+			<video width="1280" height="960" x-ref="hovervideo" @mouseenter="$refs.hovervideo.play()" @mouseleave="$refs.hovervideo.pause()">
 				<source src="pierre-falcke-video.mp4" type="video/mp4">
-			</video> 
+				<source src="pierre-falcke-video.mp4" type="video/mp4">
+				</video>
+			<!--<video width="1280" height="960" autoplay muted loop>
+				<source src="pierre-falcke-video.mp4" type="video/mp4">
+			</video> id="herovideo --> 
 		</section>
 		<section class="max-w-xl mx-auto mt-32 prose" id="manchet">
 			<p class="text-xl">Pierre Falcke. Du ved formentligt ikke hvem han er. Men indtil for kort tid siden, så du hans værker et par gange om dagen, hver dag, året rundt. Pierre Falcke var en af verdens bedst sælgende stock-fotografer, og han solgte over 2 millioner fotos om året. Men Pierre kunne ikke drømme om at bruge sine egne fotos - faktisk kan han ikke fordrage sit eget arbejde.</p>
@@ -148,3 +156,4 @@ import "../styles/tobii.min.css";
 <script defer>
 	const tobii = new Tobii(); 
 </script>
+
