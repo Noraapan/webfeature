@@ -1,5 +1,24 @@
 ---
 ---
-<div>
-Header - tilføj navigation mm.
+<div x-data="{ showmenu: false }" class="p-4 fixed top-0 w-full z-20 bg-red/5 fade-in">
+    <div id="navbar" class="flex flex-row justify-between">
+        <div id="logo">
+            <a href="/">
+                <img src="/logo.svg" alt="logo" class="hover:opacity-75" />
+            </a>
+        </div>
+        <button id="burgermenu" class="pt-5 pr-4 hover:opacity-75" x-on:click="showmenu = !showmenu">
+            Menu
+        </button>
+    </div>
+    <nav id="mobilmenu" class="fixed right-8 flex flex-col content-center pt-2" 
+        x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
+        <ul>
+            <li class="hover:opacity-75"><a href="#pierre">Pierre Falcke</a></li>
+            <li class="hover:opacity-75"><a href="#stockfotos">Om stock-fotos</a></li>
+            <li class="hover:opacity-75"><a href="#merom">Mer om Pierre</a></li>
+            <li class="hover:opacity-75"><a href="#eksperimenter">Fotoeksperimenter</a></li>
+            <li class="hover:opacity-75"><a href="#galleri">Galleri</a></li>
+        </ul>
+    </nav>
 </div>
