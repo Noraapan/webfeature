@@ -119,6 +119,45 @@ const { href="#", target="_self"} = Astro.props;
 				</div>
 			</div>
 		</section>
+		<section class="max-w-xl mx-auto prose">
+			<h2 class="text-4xl">Pierres fotoeksperimenter</h2>
+			<article>
+				<div class="sticky top-1/4 mangeelementerinview grid grid-cols-5 gap-1">
+					<div class="p-1 mangeelementer1">
+						<img src="/8mmkamera.jpeg" alt="Bild 1" class="object-cover w-full h-full">
+					</div>
+					<div class="p-1 mangeelementer2">
+						<img src="/110-kamera.jpeg" alt="Bild 2" class="object-cover w-full h-full">
+					</div>
+					<div class="p-1 mangeelementer3">
+						<img src="/110-film-for-gammel.jpeg" alt="Bild 3" class="object-cover w-full h-full">
+					</div>
+					<div class="p-1 mangeelementer4">
+						<img src="/110-kamera-2.jpeg" alt="Bild 4" class="object-cover w-full h-full">
+					</div>
+					<div class="p-1 mangeelementer5">
+						<img src="/110-kamera-3.jpeg" alt="Bild 5" class="object-cover w-full h-full">
+					</div>
+					<div class="p-1 mangeelementer6">
+						<img src="/110-og-135-film-kamera.jpeg" alt="Bild 6" class="object-cover w-full h-full">
+					</div>
+					<div class="p-1 mangeelementer7">
+						<img src="/filmfoto.jpeg" alt="Bild 7" class="object-cover w-full h-full">
+					</div>
+					<div class="p-1 mangeelementer8">
+						<img src="lomo-diana-f.jpg" alt="Bild 8" class="object-cover w-full h-full">
+					</div>
+					<div class="p-1 mangeelementer9">
+						<img src="/lomo-smena.jpg" alt="Bild 9" class="object-cover w-full h-full">
+					</div>
+					<div class="p-1 mangeelementer10">
+						<img src="/udstyr.jpeg" alt="Bild 10" class="object-cover w-full h-full">
+					</div>
+				</div>
+				<div class="h-screen"></div>
+			</article>  
+		</section>
+		
 		<section id="nybegyndelse">
 			<div class="max-w-xl mx-auto my-32 prose">
 				<h2 class="text-4xl">En ny begyndelse</h2>
@@ -161,40 +200,6 @@ const { href="#", target="_self"} = Astro.props;
 				</ul>
 			</section>
 		</div>
-
-<!--
-		<section>
-			<div>
-				<a href="pierre.jpeg" class="lightbox">
-					<Image src={pierre} alt="Pierre Falcke selvportræt" class="my-0"/>
-					<figcaption>Pierre Falcke, selvportræt</figcaption>
-				</a>
-			</div>
-			<div>
-				<a href="glitch.jpg" class="fotoinview lightbox">
-					<Image src={glitch} alt="glitch kunst foto" class="my-0" />
-					<figcaption>Glitch kunst</figcaption>
-				</a>
-			</div>
-			<div>
-				<a href="lomo-smena-17.jpg" class="anotherFotoinview lightbox">
-					<Image src={smena} alt="dobbelteksponeret billede" class="my-0" />
-					<figcaption>Dobbelteksponering med Smena</figcaption>
-				</a>
-			</div>
-			<div>
-				<a href="over-out-icm.jpeg" class="fotoinview lightbox">
-					<Image src={overouticm} alt="overeksponeret billede" class="my-0" />
-					<figcaption>Overeksponeret og ude af fokus</figcaption>
-				</a>	
-			</div>
-			<div>
-				<a href="tynd-film.jpg" class="anotherFotoinview lightbox">
-					<Image src={tyndfilm} alt="Tynd film" class="my-0" />
-					<figcaption>Tynd film</figcaption>
-				</a>
-			</div>
-		</section> -->
 	</article>
 </MainLayout>
 <script is:inline src="/tobii.min.js"></script>
@@ -274,4 +279,34 @@ inView( ".inviewreturn", ({ target }) => {
 	}),
 	{ target: document.querySelector("#horisontalscrollsection") }
 	); 
+</script>
+<script>
+		import { inView } from "motion";
+		import { animate } from 'motion';
+	/* Mange elementer der animerer ind */
+	inView( ".mangeelementerinview", () =>{
+	animate( ".mangeelementer1", { x: [-2000, 0 ], y: [-50, 0 ] }, { duration: 1 }) 
+	animate( ".mangeelementer2", { x: [-1500, 0 ], y: [-100, 0 ] }, { duration: 3 })
+	animate( ".mangeelementer3", { x: [-1000, 0 ], y: [-150, 0 ] }, { duration: 3 })
+	animate( ".mangeelementer4", { x: [1750, 0 ] }, { duration: 2 })
+	animate( ".mangeelementer5", { x: [-2000, 0 ], y: [-100, 0 ]  }, { duration: 1 })
+	animate( ".mangeelementer6", { x: [2000, 0 ] }, { duration: 2 })
+	animate( ".mangeelementer7", { x: [1500, 0 ], y: [50, 0 ] }, { duration: 3 })
+	animate( ".mangeelementer8", { x: [1000, 0 ], y: [150, 0 ] }, { duration: 2 })
+	animate( ".mangeelementer9", { x: [1500, 0 ], y: [0, 0 ] }, { duration: 1 })
+	animate( ".mangeelementer10", { x: [2000, 0 ] , y: [50, 0 ] }, { duration: 2 })
+	return () => {
+		animate( ".mangeelementer1", { x: [-2000, 0 ], y: [-50, 0 ] }, { duration: 1 }) 
+		animate( ".mangeelementer2", { x: [-1500, 0 ], y: [-100, 0 ] }, { duration: 3 })
+		animate( ".mangeelementer3", { x: [-1000, 0 ], y: [-150, 0 ] }, { duration: 3 })
+		animate( ".mangeelementer4", { x: [1750, 0 ] }, { duration: 2 })
+		animate( ".mangeelementer5", { x: [-2000, 0 ], y: [-100, 0 ]  }, { duration: 1 })
+		animate( ".mangeelementer6", { x: [2000, 0 ] }, { duration: 2 })
+		animate( ".mangeelementer7", { x: [1500, 0 ], y: [50, 0 ] }, { duration: 3 })
+		animate( ".mangeelementer8", { x: [1000, 0 ], y: [150, 0 ] }, { duration: 2 })
+		animate( ".mangeelementer9", { x: [1500, 0 ], y: [0, 0 ] }, { duration: 1 })
+		animate( ".mangeelementer10", { x: [2000, 0 ] , y: [50, 0 ] }, { duration: 2 })
+   		}
+  	})
+	
 </script>
